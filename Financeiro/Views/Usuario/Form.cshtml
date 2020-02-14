@@ -1,0 +1,26 @@
+﻿@model Financeiro.Models.UsuarioModel
+
+<h2>Form</h2>
+
+@using (Html.BeginForm("Adiciona", "Usuario", FormMethod.Post))
+{
+    @Html.ValidationMessage("usuario.invalido")    
+
+    @Html.LabelFor(u => u.nome, "Nome")
+    @Html.TextBoxFor(u => u.nome, new { @class = "form-control" })
+    @Html.ValidationMessageFor(u => u.nome)
+
+    @Html.LabelFor(u => u.email, "Email")
+    @Html.TextBoxFor(u => u.email, new { @class = "form-control" })
+    @Html.ValidationMessageFor(u => u.email)
+
+    @Html.LabelFor(u => u.senha, "Senha")
+    @Html.TextBoxFor(u => u.senha, new { @class = "form-control" })
+    @Html.ValidationMessageFor(u => u.senha)
+
+    @Html.LabelFor(u => u.confSenha, "Confirmação Senha")
+    @Html.TextBoxFor(u => u.confSenha, new { @class = "form-control" })
+    @Html.ValidationMessageFor(u => u.confSenha)
+
+    <input type="submit" value="cadastrar" />
+}
